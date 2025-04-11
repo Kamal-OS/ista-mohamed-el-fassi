@@ -3,7 +3,7 @@ import OfpptLogo from '../assets/Logos/ofppt-logo.svg'
 function TopBar() {
   return (
     <>
-          <div id="partie1" className='mt-0 w-full h-[40px] '>
+         <div id="partie1" className='mt-0 w-full h-[40px] '>
         <ul className='flex justify-end gap-5 mr-5'>
           <li id="item1" className="p-1">
             <div className="flex items-center gap-1">
