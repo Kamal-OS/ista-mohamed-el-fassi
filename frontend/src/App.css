@@ -1,0 +1,18 @@
+#partie1 {
+  background-color: #a4a3a3;
+}
+#partie2 {
+  background-color: transparent;
+}
+#partie3 {
+  background-color: #004a93;
+}
+#TopFooter {
+  background-color: #004a93;
+}
+#BottoFooter {
+  background-color: #00904a;
+}
+.clip-trapezoid {
+  clip-path: polygon(0 0, 50% 0, 90% 100%, 0% 100%);
+}
