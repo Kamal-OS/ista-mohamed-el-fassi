@@ -6,26 +6,25 @@ function TopBar() {
          <div id="partie1" className='mt-0 w-full h-[40px] '>
         <ul className='flex justify-end gap-5 mr-5'>
           <li id="item1" className="p-1">
-            <div className="flex items-center gap-1">
-              <img src="https://img.icons8.com/?size=100&id=82751&format=png&color=000000" alt="" className='size-7'/>
-              <span className='font text-base mt-1'>Connexion</span>
+            <div className="p-2">
+              <span className='font text-base font-bold'>Connexion</span>
             </div>
           </li>
           <div className="h-10 border-l border-white"></div>
           <li id="item2" className="p-1">
-            <img src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="" className='size-7'/>
+            <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=FFFFFF" alt="" className='size-7 object-contain'/>
           </li>
           <div className="h-10 border-l border-white"></div>
           <li id="item3" className="p-1">
-            <img src="https://img.icons8.com/?size=100&id=p62ASPK2Kpqp&format=png&color=000000" alt="" className='size-7'/>
+            <img src="https://img.icons8.com/?size=100&id=60440&format=png&color=FFFFFF" alt="" className='size-8 object-contain'/>
           </li>
           <div className="h-10 border-l border-white"></div>
           <li id="item4" className="p-1">
-            <img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000" alt="" className='size-7'/>
+            <img src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=FFFFFF" alt="" className='size-7'/>
           </li>
           <div className="h-10 border-l border-white"></div>
           <li id="item4" className="p-1">
-            <img src="https://img.icons8.com/color/48/youtube-play.png" alt="" className='size-7'/>
+            <img src="https://img.icons8.com/?size=100&id=37326&format=png&color=FFFFFF" alt="" className='size-7'/>
           </li>
         </ul>
       </div>
