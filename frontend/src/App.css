@@ -13,3 +13,6 @@
 #BottoFooter {
   background-color: #00904a;
 }
+.clip-trapezoid {
+  clip-path: polygon(0 0, 50% 0, 90% 100%, 0% 100%);
+}
