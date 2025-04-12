@@ -1,11 +1,12 @@
-import "./App.css";
-
+import './App.css'
+import ExecuteComponent from './Components/AccueilPage'
 function App() {
+
   return (
     <>
-      <h1>Hello World!</h1>
+    <ExecuteComponent />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
