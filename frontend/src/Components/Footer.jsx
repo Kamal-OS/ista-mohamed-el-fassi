@@ -10,8 +10,8 @@ function TopFooter() {
             alt="Logo Ofppt"
             className="w-[327px] h-[102px]  ms-[200px]"
           />
-          <div className="w-[327px] ms-[200px] mt-2  border-b-[1px] border-dashed" />
-          <div className="flex justify-start gap-9 ms-[220px]">
+          <div className="w-[327px] ms-[200px] mt-2  border-b-[1px] border-dashed border-white" />
+          <div className="flex justify-start gap-9 ms-[220px] ">
             <img
               src="https://img.icons8.com/?size=100&id=8818&format=png&color=FFFFFF"
               className="size-10 mt-5"
@@ -34,13 +34,13 @@ function TopFooter() {
             />
           </div>
         </div>
-        <div className="border-s-[0.1px] border-dashed mt-16 h-[370px]" />
+        <div className="border-s-[0.1px] border-dashed mt-16 h-[370px] border-white" />
         <div className="flex flex-col gap-7   p-[80px]">
           <div>
             <div className="font text-white text-xl font-bold ">
               Lient utiles
             </div>
-            <div className="border-b-4 w-[48px] mt-[7px]" />
+            <div className="border-b-4 border-white w-[48px] mt-[7px]" />
           </div>
           <ul className="flex flex-col gap-5 text-white font">
             <li>Ofppt Site Officiel</li>
@@ -49,11 +49,11 @@ function TopFooter() {
             <li>Scholar VOX</li>
           </ul>
         </div>
-        <div className="border-s-[0.1px] border-dashed mt-16 h-[370px]" />
+        <div className="border-s-[0.1px] border-dashed mt-16 h-[370px] border-white" />
         <div className="flex flex-col gap-5  p-[80px]">
           <div>
             <div className="font text-white text-xl font-bold ">Contacts</div>
-            <div className="border-b-4 w-[48px] mt-[7px]" />
+            <div className="border-b-4 border-white w-[48px] mt-[7px]" />
           </div>
           <ul className=" list-disc text-white font  space-y-2 ms-8">
             <li>Adresse</li>

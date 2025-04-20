@@ -394,13 +394,17 @@ function Partenaire() {
         }
         titre={"Nos partenaires"}
       />
-      <div className="flex justify-around py-10">
-        <img src={ImageCisco} alt="" className="object-contain" />
-        <img src={ImageAfrique} alt="" className="object-contain" />
-        <img src={ImageOracle} alt="" className="object-contain" />
-        <img src={ImageMicrosoft} alt="" className="object-contain" />
-        <img src={ImageAmazone} a lt="" className="object-contain" />
-      </div>
+<div className="flex justify-around py-10 gap-4 flex-wrap">
+  {[ImageCisco, ImageAfrique, ImageOracle, ImageMicrosoft, ImageAmazone].map((img, index) => (
+    <div
+      key={index}
+      className="p-4 rounded-lg transition duration-300 hover:bg-transparent hover:grayscale-0 grayscale"
+    >
+      <img src={img} alt="" className="w-30 h-30 object-contain" />
+    </div>
+  ))}
+</div>
+
     </div>
   );
 }
