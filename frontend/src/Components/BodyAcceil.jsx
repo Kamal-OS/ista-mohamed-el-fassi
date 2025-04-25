@@ -204,11 +204,11 @@ function CardActualitess({
     <>
       <div className="w-[470px] h-[460px] bg-[#F2F2F2] rounded-2xl">
         <div className="absolute w-[330px] h-[300px] bg-[#004a93] clip-trapezoid rounded-t-2xl p-5">
-          <div className="w-[130px] h-9 bg-[#00904a] p-2 mt-10 font text-white font-bold mb-5">
+          <div className="w-auto h-9 bg-[#00904a] p-2 mt-10 font text-white font-bold mb-5 ">
             {GroupeCible}
           </div>
           <div className="flex flex-col gap-6 p-3 max-w-[200px]">
-            <p className="font text-[16px] font-bold text-white ">
+            <p className="font text-[15px] font-bold text-white ">
               {Titre.toUpperCase()}
             </p>
             <p className="font text-[14px] text-white ">
@@ -292,23 +292,28 @@ function PresentationISTA() {
               />
             </div>
           </div>
-          <div id="Content" className=" h-[500px] w-[600px] p-5">
-            <h1 className="text-[#004A93] font-bold font text-[30px] ">
-              À LA DECOUVERTE D’ISTA MOHAMED EL FASSI
-            </h1>
-            <div className="font text-[30px] font-medium py-5 ">
-              {"Notre institut, notre engagement.".toUpperCase()}
+          <div
+            id="Content"
+            className="h-[470px] w-[600px] p-5 overflow-hidden flex flex-col justify-between ">
+            <div>
+              <h1 className="text-[#004A93] font-bold font text-[25px]">
+                À LA DECOUVERTE D’ISTA MOHAMED EL FASSI
+              </h1>
+              <div className="font text-[20px] font-medium py-5">
+                {"Notre institut, notre engagement.".toUpperCase()}
+              </div>
+              <p className="font text-[#707070] text-[20px] leading-relaxed line-clamp-8 ">
+                L’Institut Spécialisé de Technologie Appliquée Mohamed El Fassi
+                d’Errachidia est un établissement public relevant de l’OFPPT. Il
+                a pour mission de former des techniciens et des professionnels
+                qualifiés, capables de répondre aux besoins du marché du travail
+                et de contribuer au développement économique et social, au
+                niveau régional et national.
+              </p>
             </div>
-            <p className="font text-[#707070] text-[20px] max-w-[600px] py-5">
-              L’Institut Spécialisé de Technologie Appliquée Mohamed El Fassi
-              d’Errachidia est un établissement public relevant de l’OFPPT. Il a
-              pour mission de former des techniciens et des professionnels
-              qualifiés, capables de répondre aux besoins du marché du travail
-              et de contribuer au développement économique et social, au niveau
-              régional et national.
-            </p>
-            <div className="flex gap-4 py-7">
-              <span className="font-bold text-[23px]">LA SUITE</span>
+
+            <a href="#" className="flex items-center gap-2 ">
+              <span className="font-bold text-[23px] ">LA SUITE</span>
               <svg
                 width="13"
                 height="32"
@@ -320,7 +325,7 @@ function PresentationISTA() {
                   fill="#2B2B2B"
                 />
               </svg>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -394,12 +399,20 @@ function Partenaire() {
         }
         titre={"Nos partenaires"}
       />
-      <div className="flex justify-around py-10">
-        <img src={ImageCisco} alt="" className="object-contain" />
-        <img src={ImageAfrique} alt="" className="object-contain" />
-        <img src={ImageOracle} alt="" className="object-contain" />
-        <img src={ImageMicrosoft} alt="" className="object-contain" />
-        <img src={ImageAmazone} a lt="" className="object-contain" />
+      <div className="flex justify-around py-10 gap-4 flex-wrap">
+        {[
+          ImageCisco,
+          ImageAfrique,
+          ImageOracle,
+          ImageMicrosoft,
+          ImageAmazone,
+        ].map((img, index) => (
+          <div
+            key={index}
+            className="p-4 rounded-lg transition duration-300 hover:bg-transparent hover:grayscale-0 grayscale">
+            <img src={img} alt="" className="w-30 h-30 object-contain" />
+          </div>
+        ))}
       </div>
     </div>
   );
