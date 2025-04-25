@@ -13,32 +13,32 @@ function TopFooter() {
           <div className="w-[327px] ms-[200px] mt-2  border-b-[1px] border-dashed border-white" />
           <div className="flex justify-start gap-9 ms-[220px] ">
             <a href="#">
-            <img
-              src="https://img.icons8.com/?size=100&id=8818&format=png&color=FFFFFF"
-              className="size-10 mt-5"
-              alt="SocialMediaIcone"
-            />
+              <img
+                src="https://img.icons8.com/?size=100&id=8818&format=png&color=FFFFFF"
+                className="size-10 mt-5"
+                alt="SocialMediaIcone"
+              />
             </a>
             <a href="#">
-            <img
-              src="https://img.icons8.com/?size=100&id=59813&format=png&color=FFFFFF"
-              className="size-10 mt-5"
-              alt="SocialMediaIcone"
-            />
+              <img
+                src="https://img.icons8.com/?size=100&id=59813&format=png&color=FFFFFF"
+                className="size-10 mt-5"
+                alt="SocialMediaIcone"
+              />
             </a>
             <a href="#">
-            <img
-              src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=FFFFFF"
-              className="size-10 mt-5"
-              alt="SocialMediaIcone"
-            />
+              <img
+                src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=FFFFFF"
+                className="size-10 mt-5"
+                alt="SocialMediaIcone"
+              />
             </a>
             <a href="#">
-            <img
-              src="https://img.icons8.com/?size=100&id=IuI5Yd3J3qcC&format=png&color=FFFFFF"
-              className="size-10  mt-5 "
-              alt="SocialMediaIcone"
-            />
+              <img
+                src="https://img.icons8.com/?size=100&id=IuI5Yd3J3qcC&format=png&color=FFFFFF"
+                className="size-10  mt-5 "
+                alt="SocialMediaIcone"
+              />
             </a>
           </div>
         </div>
@@ -51,10 +51,18 @@ function TopFooter() {
             <div className="border-b-4 border-white w-[48px] mt-[7px]" />
           </div>
           <ul className="flex flex-col gap-5 text-white font">
-            <li><a href="#">Ofppt Site Officiel</a> </li>
-            <li><a href="#">MY WAY</a> </li>
-            <li><a href="#">Altissia/OFPPT-Langues</a> </li>
-            <li><a href="#">Scholar VOX</a> </li>
+            <li>
+              <a href="#">Ofppt Site Officiel</a>{" "}
+            </li>
+            <li>
+              <a href="#">MY WAY</a>{" "}
+            </li>
+            <li>
+              <a href="#">Altissia/OFPPT-Langues</a>{" "}
+            </li>
+            <li>
+              <a href="#">Scholar VOX</a>{" "}
+            </li>
           </ul>
         </div>
         <div className="border-s-[0.1px] border-dashed mt-16 h-[370px] border-white" />

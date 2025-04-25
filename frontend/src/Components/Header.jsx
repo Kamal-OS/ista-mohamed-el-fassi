@@ -1,11 +1,13 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import OfpptLogo from "../assets/Logos/ofppt-logo.svg";
 function TopBar() {
   return (
     <div className="fixed top-0 right-0 w-full h-[40px] bg-[#a4a3a3] text-white z-50">
       <ul className="flex justify-end items-center gap-5 h-full pr-5">
         <li className="p-1">
-          <a href="/login" className="text-base font-bold cursor-pointer hover:underline">
+          <a
+            href="/login"
+            className="text-base font-bold cursor-pointer hover:underline">
             Connexion
           </a>
         </li>
@@ -62,7 +64,6 @@ function TopBar() {
   );
 }
 
-
 function LogoSection() {
   return (
     <>
@@ -86,7 +87,6 @@ function LogoSection() {
       </div>
     </>
   );
-  
 }
 
 function NavBar() {
@@ -138,11 +138,11 @@ function NavBar() {
 
   useEffect(() => {
     // Add event listener for clicks outside of the dropdowns
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
 
     // Cleanup the event listener on component unmount
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -156,26 +156,29 @@ function NavBar() {
             alt="Accueil Icon"
             className="size-4"
           />
-          <a href="/" className="text-base mt-1">ACCUEIL</a>
+          <a href="/" className="text-base mt-1">
+            ACCUEIL
+          </a>
         </li>
 
         {/* NOS CONNAÎTRE */}
         <li className="relative cursor-pointer" ref={nosConnaitreRef}>
-          <div className="flex items-center gap-2" onClick={() => handleToggle('nosConnaitre')}>
+          <div
+            className="flex items-center gap-2"
+            onClick={() => handleToggle("nosConnaitre")}>
             <img
               src="https://img.icons8.com/?size=100&id=90393&format=png&color=FFFFFF"
               alt="Icon"
               className="size-5"
             />
-            <span  className="text-base mt-1">NOS CONNAÎTRE</span>
+            <span className="text-base mt-1">NOS CONNAÎTRE</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
+              strokeWidth="2">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -184,30 +187,49 @@ function NavBar() {
             </svg>
           </div>
           {isOpen.nosConnaitre && (
-            <ul className="absolute bg-white text-black rounded shadow-md mt-2 w-48 z-50" onMouseLeave={()=> setIsOpen((prevState)=>{return {...prevState,nosConnaitre :false }})}>
-              <li><a href="/mot-directeur" className="block px-4 py-2 hover:bg-blue-100">Mot du directeur</a></li>
-              <li><a href="/notre-mission" className="block px-4 py-2 hover:bg-blue-100">Notre mission</a></li>
+            <ul
+              className="absolute bg-white text-black rounded shadow-md mt-2 w-48 z-50"
+              onMouseLeave={() =>
+                setIsOpen((prevState) => {
+                  return { ...prevState, nosConnaitre: false };
+                })
+              }>
+              <li>
+                <a
+                  href="/mot-directeur"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Mot du directeur
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/notre-mission"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Notre mission
+                </a>
+              </li>
             </ul>
           )}
         </li>
 
         {/* FORMATIONS */}
         <li className="relative cursor-pointer" ref={formationsRef}>
-          <div className="flex items-center gap-2" onClick={() => handleToggle('formations')}>
+          <div
+            className="flex items-center gap-2"
+            onClick={() => handleToggle("formations")}>
             <img
               src="https://img.icons8.com/?size=100&id=79387&format=png&color=FFFFFF"
               alt="Icon"
               className="size-5"
             />
-            <span  className="text-base mt-1">FORMATIONS</span>
+            <span className="text-base mt-1">FORMATIONS</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
+              strokeWidth="2">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -216,30 +238,49 @@ function NavBar() {
             </svg>
           </div>
           {isOpen.formations && (
-            <ul className="absolute bg-white text-black rounded shadow-md mt-2 w-52 z-50" onMouseLeave={()=> setIsOpen((prevState)=>{return {...prevState,formations :false }})}>
-              <li><a href="/formations/dev-digital" className="block px-4 py-2 hover:bg-blue-100">Développement Digital</a></li>
-              <li><a href="/formations/reseau" className="block px-4 py-2 hover:bg-blue-100">Réseaux Informatiques</a></li>
+            <ul
+              className="absolute bg-white text-black rounded shadow-md mt-2 w-52 z-50"
+              onMouseLeave={() =>
+                setIsOpen((prevState) => {
+                  return { ...prevState, formations: false };
+                })
+              }>
+              <li>
+                <a
+                  href="/formations/dev-digital"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Développement Digital
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/formations/reseau"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Réseaux Informatiques
+                </a>
+              </li>
             </ul>
           )}
         </li>
 
         {/* ANNONCES */}
         <li className="relative cursor-pointer" ref={annoncesRef}>
-          <div className="flex items-center gap-2" onClick={() => handleToggle('annonces')}>
+          <div
+            className="flex items-center gap-2"
+            onClick={() => handleToggle("annonces")}>
             <img
               src="https://img.icons8.com/?size=100&id=IzYXNYBBP9ql&format=png&color=FFFFFF"
               alt="Icon"
               className="size-5"
             />
-            <span  className="text-base mt-1">ANNONCES</span>
+            <span className="text-base mt-1">ANNONCES</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
+              strokeWidth="2">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -248,30 +289,49 @@ function NavBar() {
             </svg>
           </div>
           {isOpen.annonces && (
-            <ul className="absolute bg-white text-black rounded shadow-md mt-2 w-48 z-50" onMouseLeave={()=> setIsOpen((prevState)=>{return {...prevState,annonces :false }})}>
-              <li><a href="/annonces/concours" className="block px-4 py-2 hover:bg-blue-100">Avis de concours</a></li>
-              <li><a href="/annonces/resultats" className="block px-4 py-2 hover:bg-blue-100">Résultats</a></li>
+            <ul
+              className="absolute bg-white text-black rounded shadow-md mt-2 w-48 z-50"
+              onMouseLeave={() =>
+                setIsOpen((prevState) => {
+                  return { ...prevState, annonces: false };
+                })
+              }>
+              <li>
+                <a
+                  href="/annonces/concours"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Avis de concours
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/annonces/resultats"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Résultats
+                </a>
+              </li>
             </ul>
           )}
         </li>
 
         {/* STAGIAIRE */}
         <li className="relative cursor-pointer" ref={stagiaireRef}>
-          <div className="flex items-center gap-2" onClick={() => handleToggle('stagiaire')}>
+          <div
+            className="flex items-center gap-2"
+            onClick={() => handleToggle("stagiaire")}>
             <img
               src="https://img.icons8.com/?size=100&id=38834&format=png&color=FFFFFF"
               alt="Icon"
               className="size-5"
             />
-            <span  className="text-base mt-1">ESPACE STAGIAIRE</span>
+            <span className="text-base mt-1">ESPACE STAGIAIRE</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
+              strokeWidth="2">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -280,30 +340,49 @@ function NavBar() {
             </svg>
           </div>
           {isOpen.stagiaire && (
-            <ul className="absolute bg-white text-black rounded shadow-md mt-2 w-52 z-50" onMouseLeave={()=> setIsOpen((prevState)=>{return {...prevState,stagiaire :false }})}>
-              <li><a href="/stagiaire/emplois" className="block px-4 py-2 hover:bg-blue-100">Emplois du temps</a></li>
-              <li><a href="/stagiaire/absences" className="block px-4 py-2 hover:bg-blue-100">Absences</a></li>
+            <ul
+              className="absolute bg-white text-black rounded shadow-md mt-2 w-52 z-50"
+              onMouseLeave={() =>
+                setIsOpen((prevState) => {
+                  return { ...prevState, stagiaire: false };
+                })
+              }>
+              <li>
+                <a
+                  href="/stagiaire/emplois"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Emplois du temps
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/stagiaire/absences"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Absences
+                </a>
+              </li>
             </ul>
           )}
         </li>
 
         {/* ENTREPRISE */}
         <li className="relative cursor-pointer" ref={entrepriseRef}>
-          <div className="flex items-center gap-2" onClick={() => handleToggle('entreprise')}>
+          <div
+            className="flex items-center gap-2"
+            onClick={() => handleToggle("entreprise")}>
             <img
               src="https://img.icons8.com/?size=100&id=39368&format=png&color=FFFFFF"
               alt="Icon"
               className="size-5"
             />
-            <span  className="text-base mt-1">SPACE ENTREPRISE</span>
+            <span className="text-base mt-1">SPACE ENTREPRISE</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
+              strokeWidth="2">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -312,30 +391,49 @@ function NavBar() {
             </svg>
           </div>
           {isOpen.entreprise && (
-            <ul className="absolute bg-white text-black rounded shadow-md mt-2 w-56 z-50" onMouseLeave={()=> setIsOpen((prevState)=>{return {...prevState,entreprise :false }})}>
-              <li><a href="/entreprise/offres" className="block px-4 py-2 hover:bg-blue-100">Offres de stage</a></li>
-              <li><a href="/entreprise/deposer" className="block px-4 py-2 hover:bg-blue-100">Déposer une offre</a></li>
+            <ul
+              className="absolute bg-white text-black rounded shadow-md mt-2 w-56 z-50"
+              onMouseLeave={() =>
+                setIsOpen((prevState) => {
+                  return { ...prevState, entreprise: false };
+                })
+              }>
+              <li>
+                <a
+                  href="/entreprise/offres"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Offres de stage
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/entreprise/deposer"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Déposer une offre
+                </a>
+              </li>
             </ul>
           )}
         </li>
 
         {/* PARASCOLAIRES */}
         <li className="relative cursor-pointer" ref={parascolaireRef}>
-          <div className="flex items-center gap-2" onClick={() => handleToggle('parascolaire')}>
+          <div
+            className="flex items-center gap-2"
+            onClick={() => handleToggle("parascolaire")}>
             <img
               src="https://img.icons8.com/?size=100&id=85959&format=png&color=FFFFFF"
               alt="Icon"
               className="size-5"
             />
-            <span  className="text-base mt-1">ACTIVITÉS PARASCOLAIRES</span>
+            <span className="text-base mt-1">ACTIVITÉS PARASCOLAIRES</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              strokeWidth="2"
-            >
+              strokeWidth="2">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -344,9 +442,27 @@ function NavBar() {
             </svg>
           </div>
           {isOpen.parascolaire && (
-            <ul className="absolute bg-white text-black rounded shadow-md mt-2 w-60 z-50"  onMouseLeave={()=> setIsOpen((prevState)=>{return {...prevState,parascolaire :false }})}>
-              <li><a href="/parascolaire/clubs" className="block px-4 py-2 hover:bg-blue-100">Clubs</a></li>
-              <li><a href="/parascolaire/evenements" className="block px-4 py-2 hover:bg-blue-100">Événements</a></li>
+            <ul
+              className="absolute bg-white text-black rounded shadow-md mt-2 w-60 z-50"
+              onMouseLeave={() =>
+                setIsOpen((prevState) => {
+                  return { ...prevState, parascolaire: false };
+                })
+              }>
+              <li>
+                <a
+                  href="/parascolaire/clubs"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Clubs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/parascolaire/evenements"
+                  className="block px-4 py-2 hover:bg-blue-100">
+                  Événements
+                </a>
+              </li>
             </ul>
           )}
         </li>
@@ -354,10 +470,6 @@ function NavBar() {
     </div>
   );
 }
-
-
-
-
 
 function Header() {
   return (
