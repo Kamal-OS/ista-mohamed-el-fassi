@@ -1,0 +1,64 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// ? Elements
+import AccueilPage from "./Components-home-page/AccueilPage";
+import NotreMissionPage from "./Components-nos-connaitre-page/notreMission";
+import PageDirecteur from "./Components-nos-connaitre-page/motduDirecteur";
+import HistoirISTA from "./Components-nos-connaitre-page/historique";
+import PageStaffAdministratifs from "./Components-nos-connaitre-page/StaffAdministratifs";
+import CorpsEnseignants from "./Components-nos-connaitre-page/CorpsEnseignants";
+import Ambassadeurs from "./Components-nos-connaitre-page/Ambassadeurs";
+import ChiffresClés from "./Components-nos-connaitre-page/ChiffresClés";
+import Actualités from "./ACTUALITÉS/Actualités";
+import AppelOffres from "./ACTUALITÉS/AppelOffres";
+function RoutesMyApp() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AccueilPage />} />
+        <Route path="/nos-connaitre">
+          <Route
+            path="Presentation de l’etablissement"
+            element={<NotreMissionPage />}
+          />
+          <Route
+            path="mot-directeur"
+            element={<PageDirecteur />}
+          />
+          <Route
+            path="Histoire"
+            element={<HistoirISTA />}
+          />
+          <Route
+            path="Staff administratifs"
+            element={<PageStaffAdministratifs />}
+          />
+          <Route
+            path="Corps Enseignants"
+            element={<CorpsEnseignants />}
+          />
+          <Route
+            path="Ambassadeurs"
+            element={<Ambassadeurs />}
+          />
+          <Route
+            path="Chiffres clés"
+            element={<ChiffresClés />}
+          />
+        </Route>
+        <Route path="/ACTUALITES">
+          <Route
+            path="Actualités"
+            element={<Actualités />}
+          />
+          <Route
+            path="Appel d’offres"
+            element={<AppelOffres />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default RoutesMyApp;
