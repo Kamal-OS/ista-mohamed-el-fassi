@@ -1,63 +1,65 @@
-import { useEffect, useRef, useState } from "react";
-import OfpptLogo from "../assets/Logos/ofppt-logo.svg";
+import React, { useState, useEffect, useRef } from "react";
+import OfpptLogo from "../../assets/Logos/ofppt-logo.svg";
+import { Link, useLocation } from "react-router-dom";
+// section de top-bar
 function TopBar() {
   return (
     <div className="fixed top-0 right-0 w-full h-[40px] bg-[#a4a3a3] text-white z-50">
       <ul className="flex justify-end items-center gap-5 h-full pr-5">
         <li className="p-1">
-          <a
-            href="/login"
-            className="text-base font-bold cursor-pointer hover:underline">
+          <Link
+            to="/login"
+            className="text-sm font-bold cursor-pointer hover:underline">
             Connexion
-          </a>
+          </Link>
         </li>
 
         <div className="h-6 border-l border-white" />
 
         <li className="p-1">
-          <a href="/icon1">
+          <Link to="/icon1">
             <img
               src="https://img.icons8.com/?size=100&id=32309&format=png&color=FFFFFF"
               alt="Icon 1"
               className="size-6 object-contain"
             />
-          </a>
+          </Link>
         </li>
 
         <div className="h-6 border-l border-white" />
 
         <li className="p-1">
-          <a href="/icon2">
+          <Link to="/icon2">
             <img
               src="https://img.icons8.com/?size=100&id=60440&format=png&color=FFFFFF"
               alt="Icon 2"
               className="size-6 object-contain"
             />
-          </a>
+          </Link>
         </li>
 
         <div className="h-6 border-l border-white" />
 
         <li className="p-1">
-          <a href="/icon3">
+          <Link to="/icon3">
             <img
               src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=FFFFFF"
               alt="Icon 3"
               className="size-6"
             />
-          </a>
+          </Link>
         </li>
 
         <div className="h-6 border-l border-white" />
 
         <li className="p-1">
-          <a href="/icon4">
+          <Link to="/icon4">
             <img
               src="https://img.icons8.com/?size=100&id=37326&format=png&color=FFFFFF"
               alt="Icon 4"
               className="size-6"
             />
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
@@ -67,7 +69,6 @@ function TopBar() {
 function LogoSection() {
   return (
     <>
-      {/* Add top margin equal to the height of the TopBar to avoid overlap */}
       <div id="partie2" className="w-full py-5 mt-[40px] container mx-auto">
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 px-4">
           <img
@@ -76,7 +77,7 @@ function LogoSection() {
             className="w-24 h-24 sm:w-28 sm:h-28"
           />
           <div className="text-center sm:text-left">
-            <p className="ISTA font text-sm sm:text-base">
+            <p className="ISTA font text-sm sm:text-sm">
               Institut Spécialisé de Technologie Appliquée
             </p>
             <p className="ISTA-Errachidia font font-bold text-xl sm:text-2xl">
@@ -98,6 +99,7 @@ function NavBar() {
     entreprise: false,
     parascolaire: false,
   });
+  const PathMaintenant = useLocation();
 
   // Create a unique ref for each menu item
   const nosConnaitreRef = useRef(null);
@@ -109,6 +111,14 @@ function NavBar() {
 
   // Handle the toggle of the dropdown
   const handleToggle = (menu) => {
+    setIsOpen({
+      nosConnaitre: false,
+      formations: false,
+      annonces: false,
+      stagiaire: false,
+      entreprise: false,
+      parascolaire: false,
+    });
     setIsOpen((prevState) => ({
       ...prevState,
       [menu]: !prevState[menu],
@@ -150,19 +160,30 @@ function NavBar() {
     <div className="w-full bg-[#1e3a8a] py-3 px-2 text-white font relative z-40">
       <ul className="flex flex-wrap justify-center gap-8 text-sm sm:text-base relative">
         {/* ACCUEIL */}
-        <li className="flex items-center gap-2 cursor-pointer">
+        <li
+          className={
+            PathMaintenant.pathname == "/"
+              ? "flex items-center gap-2 cursor-pointer  border-b-orange-500 border-b-2"
+              : "flex items-center gap-2 cursor-pointer"
+          }>
           <img
             src="https://img.icons8.com/?size=100&id=72&format=png&color=FFFFFF"
             alt="Accueil Icon"
             className="size-4"
           />
-          <a href="/" className="text-base mt-1">
+          <Link to="/" className="text-sm mt-1 ">
             ACCUEIL
-          </a>
+          </Link>
         </li>
 
         {/* NOS CONNAÎTRE */}
-        <li className="relative cursor-pointer" ref={nosConnaitreRef}>
+        <li
+          className={
+            PathMaintenant.pathname.indexOf("nos-connaitre") !== -1
+              ? "relative cursor-pointer border-b-orange-500 border-b-2"
+              : "relative cursor-pointer "
+          }
+          ref={nosConnaitreRef}>
           <div
             className="flex items-center gap-2"
             onClick={() => handleToggle("nosConnaitre")}>
@@ -171,10 +192,10 @@ function NavBar() {
               alt="Icon"
               className="size-5"
             />
-            <span className="text-base mt-1">NOS CONNAÎTRE</span>
+            <span className="text-sm mt-1">NOS CONNAÎTRE</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
+              className="h-4 w-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -188,25 +209,68 @@ function NavBar() {
           </div>
           {isOpen.nosConnaitre && (
             <ul
-              className="absolute bg-white text-black rounded shadow-md mt-2 w-48 z-50"
+              className="absolute left-0 bg-[#004a93] text-white rounded shadow-md mt-2 z-50 inline-block list-none p-0 m-0 min-w-max"
               onMouseLeave={() =>
-                setIsOpen((prevState) => {
-                  return { ...prevState, nosConnaitre: false };
-                })
+                setIsOpen((prevState) => ({
+                  ...prevState,
+                  nosConnaitre: false,
+                }))
               }>
               <li>
-                <a
-                  href="/mot-directeur"
-                  className="block px-4 py-2 hover:bg-blue-100">
-                  Mot du directeur
-                </a>
+                <Link
+                  to="/nos-connaitre/Presentation de l’etablissement"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
+                  Presentation de l’etablissement
+                </Link>
               </li>
               <li>
-                <a
-                  href="/notre-mission"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/nos-connaitre/mot-directeur"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
+                  Mot du directeur
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/nos-connaitre/Histoire"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
+                  Histoire
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/nos-connaitre/Staff administratifs"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
+                  Staff administratifs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/nos-connaitre/Corps Enseignants"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
+                  Corps Enseignants
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/nos-connaitre/Ambassadeurs "
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
+                  Ambassadeurs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/nos-connaitre/Chiffres clés "
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
+                  Chiffres clés
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/nos-connaitre/notre-mission"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a] text-sm hover:text-[#00904a]">
                   Notre mission
-                </a>
+                </Link>
               </li>
             </ul>
           )}
@@ -222,10 +286,10 @@ function NavBar() {
               alt="Icon"
               className="size-5"
             />
-            <span className="text-base mt-1">FORMATIONS</span>
+            <span className="text-sm mt-1">FORMATIONS</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
+              className="h-4 w-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -239,32 +303,35 @@ function NavBar() {
           </div>
           {isOpen.formations && (
             <ul
-              className="absolute bg-white text-black rounded shadow-md mt-2 w-52 z-50"
+              className="absolute left-0 bg-[#004a93] text-white rounded shadow-md mt-2 z-50 inline-block list-none p-0 m-0 min-w-max"
               onMouseLeave={() =>
-                setIsOpen((prevState) => {
-                  return { ...prevState, formations: false };
-                })
+                setIsOpen((prevState) => ({ ...prevState, formations: false }))
               }>
               <li>
-                <a
-                  href="/formations/dev-digital"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/formations/dev-digital"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Développement Digital
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/formations/reseau"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/formations/reseau"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Réseaux Informatiques
-                </a>
+                </Link>
               </li>
             </ul>
           )}
         </li>
-
         {/* ANNONCES */}
-        <li className="relative cursor-pointer" ref={annoncesRef}>
+        <li
+          className={
+            PathMaintenant.pathname.indexOf("ACTUALITES") !== -1
+              ? "relative cursor-pointer border-b-orange-500 border-b-2"
+              : "relative cursor-pointer "
+          }
+          ref={annoncesRef}>
           <div
             className="flex items-center gap-2"
             onClick={() => handleToggle("annonces")}>
@@ -273,10 +340,10 @@ function NavBar() {
               alt="Icon"
               className="size-5"
             />
-            <span className="text-base mt-1">ACTUALITÉS</span>
+            <span className="text-sm mt-1">ACTUALITÉS</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
+              className="h-4 w-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -290,25 +357,23 @@ function NavBar() {
           </div>
           {isOpen.annonces && (
             <ul
-              className="absolute bg-white text-black rounded shadow-md mt-2 w-48 z-50"
+              className="absolute left-0 bg-[#004a93] text-white rounded shadow-md mt-2 z-50 inline-block list-none p-0 m-0 min-w-max"
               onMouseLeave={() =>
-                setIsOpen((prevState) => {
-                  return { ...prevState, annonces: false };
-                })
+                setIsOpen((prevState) => ({ ...prevState, annonces: false }))
               }>
               <li>
-                <a
-                  href="/ACTUALITÉS/Actualités"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/ACTUALITES/Actualités"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Actualités
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/ACTUALITÉS/Appel d’offres"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/ACTUALITES/Appel d’offres"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Appel d’offres
-                </a>
+                </Link>
               </li>
             </ul>
           )}
@@ -324,10 +389,10 @@ function NavBar() {
               alt="Icon"
               className="size-5"
             />
-            <span className="text-base mt-1">ESPACE STAGIAIRE</span>
+            <span className="text-sm mt-1">ESPACE STAGIAIRE</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
+              className="h-4 w-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -341,25 +406,23 @@ function NavBar() {
           </div>
           {isOpen.stagiaire && (
             <ul
-              className="absolute bg-white text-black rounded shadow-md mt-2 w-52 z-50"
+              className="absolute left-0 bg-[#004a93] text-white rounded shadow-md mt-2 z-50 inline-block list-none p-0 m-0 min-w-max"
               onMouseLeave={() =>
-                setIsOpen((prevState) => {
-                  return { ...prevState, stagiaire: false };
-                })
+                setIsOpen((prevState) => ({ ...prevState, stagiaire: false }))
               }>
               <li>
-                <a
-                  href="/stagiaire/emplois"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/stagiaire/emplois"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Emplois du temps
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/stagiaire/absences"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/stagiaire/absences"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Absences
-                </a>
+                </Link>
               </li>
             </ul>
           )}
@@ -375,10 +438,10 @@ function NavBar() {
               alt="Icon"
               className="size-5"
             />
-            <span className="text-base mt-1">SPACE ENTREPRISE</span>
+            <span className="text-sm mt-1">SPACE ENTREPRISE</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
+              className="h-4 w-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -392,25 +455,23 @@ function NavBar() {
           </div>
           {isOpen.entreprise && (
             <ul
-              className="absolute bg-white text-black rounded shadow-md mt-2 w-56 z-50"
+              className="absolute left-0 bg-[#004a93] text-white rounded shadow-md mt-2 z-50 inline-block list-none p-0 m-0 min-w-max"
               onMouseLeave={() =>
-                setIsOpen((prevState) => {
-                  return { ...prevState, entreprise: false };
-                })
+                setIsOpen((prevState) => ({ ...prevState, entreprise: false }))
               }>
               <li>
-                <a
-                  href="/entreprise/offres"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/entreprise/offres"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Offres de stage
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/entreprise/deposer"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/entreprise/deposer"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Déposer une offre
-                </a>
+                </Link>
               </li>
             </ul>
           )}
@@ -426,10 +487,10 @@ function NavBar() {
               alt="Icon"
               className="size-5"
             />
-            <span className="text-base mt-1">ACTIVITÉS PARASCOLAIRES</span>
+            <span className="text-sm mt-1">ACTIVITÉS PARASCOLAIRES</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
+              className="h-4 w-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -443,25 +504,26 @@ function NavBar() {
           </div>
           {isOpen.parascolaire && (
             <ul
-              className="absolute bg-white text-black rounded shadow-md mt-2 w-60 z-50"
+              className="absolute left-0 bg-[#004a93] text-white rounded shadow-md mt-2 z-50 inline-block list-none p-0 m-0 min-w-full"
               onMouseLeave={() =>
-                setIsOpen((prevState) => {
-                  return { ...prevState, parascolaire: false };
-                })
+                setIsOpen((prevState) => ({
+                  ...prevState,
+                  parascolaire: false,
+                }))
               }>
               <li>
-                <a
-                  href="/parascolaire/clubs"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/parascolaire/clubs"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Clubs
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/parascolaire/evenements"
-                  className="block px-4 py-2 hover:bg-blue-100">
+                <Link
+                  to="/parascolaire/evenements"
+                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Événements
-                </a>
+                </Link>
               </li>
             </ul>
           )}
