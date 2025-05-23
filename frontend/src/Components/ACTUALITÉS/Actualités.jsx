@@ -29,7 +29,7 @@ function HeadingPage() {
 // section creation d'actualite
 
 const ListActualités = Array(7).fill({
-  id: 1,
+  id:1,
   title: "Ouverture des inscriptions pour l’année 2025-2026",
   date: "8 mai 2025",
   author: "Directeur",
@@ -75,7 +75,7 @@ const LesActualites = () => {
             </h2>
             <p className="text-[#a4a3a3] mt-2">{Actualité.text}</p>
             <Link
-              to="#"
+              to={"/ACTUALITES/Actualités/"+Actualité.id}
               className="text-[#00904a] font-semibold hover:underline mt-5 inline-block">
               Continuer la lecture →
             </Link>

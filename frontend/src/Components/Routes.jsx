@@ -11,6 +11,10 @@ import Ambassadeurs from "./Components-nos-connaitre-page/Ambassadeurs";
 import ChiffresClés from "./Components-nos-connaitre-page/ChiffresClés";
 import Actualités from "./ACTUALITÉS/Actualités";
 import AppelOffres from "./ACTUALITÉS/AppelOffres";
+import FormationDisponible from "./Formation/FormationDisponible";
+import EmploiDeTemps from "./EspaceStagiaires/EmploiDeTemps";
+import PageDetaileActualite from "./ACTUALITÉS/detailActualite";
+import DetailsFiliere from "./Formation/DetailsFiliere";
 function RoutesMyApp() {
   return (
     <BrowserRouter>
@@ -54,6 +58,28 @@ function RoutesMyApp() {
           <Route
             path="Appel d’offres"
             element={<AppelOffres />}
+          />
+          {/* detaile Actualite */}
+          <Route
+            path="Actualités/:id"
+            element={<PageDetaileActualite />}
+          />
+        </Route>
+        <Route path="/Formation">
+          <Route
+            path="Formations Disponibles"
+            element={<FormationDisponible />}
+          />
+          {/* details filiere */}
+          <Route
+            path="Formations Disponibles/:filiere"
+            element={<DetailsFiliere  />}
+          />
+        </Route>
+        <Route path="/Espace-Stagiaire">
+          <Route
+            path="Emploi-du-temps"
+            element={<EmploiDeTemps />}
           />
         </Route>
       </Routes>

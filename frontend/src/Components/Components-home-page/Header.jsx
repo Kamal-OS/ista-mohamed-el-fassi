@@ -277,7 +277,13 @@ function NavBar() {
         </li>
 
         {/* FORMATIONS */}
-        <li className="relative cursor-pointer" ref={formationsRef}>
+        <li
+          className={
+            PathMaintenant.pathname.indexOf("Formation") !== -1
+              ? "relative cursor-pointer border-b-orange-500 border-b-2"
+              : "relative cursor-pointer "
+          }
+          ref={formationsRef}>
           <div
             className="flex items-center gap-2"
             onClick={() => handleToggle("formations")}>
@@ -309,16 +315,9 @@ function NavBar() {
               }>
               <li>
                 <Link
-                  to="/formations/dev-digital"
+                  to="/Formation/Formations Disponibles"
                   className="block px-4 py-2 text-sm hover:text-[#00904a]">
-                  Développement Digital
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/formations/reseau"
-                  className="block px-4 py-2 text-sm hover:text-[#00904a]">
-                  Réseaux Informatiques
+                  Formations Disponibles
                 </Link>
               </li>
             </ul>
@@ -412,7 +411,7 @@ function NavBar() {
               }>
               <li>
                 <Link
-                  to="/stagiaire/emplois"
+                  to="/Espace-Stagiaire/Emploi-du-temps"
                   className="block px-4 py-2 text-sm hover:text-[#00904a]">
                   Emplois du temps
                 </Link>
