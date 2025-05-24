@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Light.ttf);
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Medium.ttf);
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@import "tailwindcss";
+
+@theme {
+  /* fonts */
+  --font-roboto: "Roboto", sans-serif;
+
+  /* colors */
+  --color-blue: #004a93;
+  --color-green: #00904a;
+  --color-gray: #a4a3a3;
+
+  /* breakpoints */
+  /* Removes the 2xl breakpoint from container */
+  /* --breakpoint-2xl: initial; */
+}
+
+@layer base {
+  body {
+    @apply font-roboto h-screen bg-neutral-50 text-base font-normal;
+  }
+}
+
+@layer utilities {
+  /* debugging */
+  .debug {
+    border: 3px solid red !important;
+  }
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 25s linear infinite;
+  }
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}

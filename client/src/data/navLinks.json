@@ -1,0 +1,144 @@
+[
+  {
+    "label": "ACCUEIL",
+    "href": "/"
+  },
+  {
+    "label": "NOS CONNAÎTRE",
+    "dropdown": [
+      {
+        "label": "Présentation de l'établissement",
+        "href": "#"
+      },
+      {
+        "label": "Historique",
+        "href": "#"
+      },
+      {
+        "label": "Mot de la direction",
+        "href": "#"
+      },
+      {
+        "label": "Staff administratif",
+        "href": "#"
+      },
+      {
+        "label": "Corps enseignants",
+        "href": "#"
+      },
+      {
+        "label": "Ambassadors",
+        "href": "#"
+      },
+      {
+        "label": "Chiffres clés",
+        "href": "#"
+      },
+      {
+        "label": "Visite virtuelle",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "label": "FORMATIONS",
+    "dropdown": [
+      {
+        "label": "Formations disponibles",
+        "href": "#"
+      },
+      {
+        "label": "Cours du soir",
+        "href": "#"
+      },
+      {
+        "label": "Formation qualifiante",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "label": "ACTUALITÉS",
+    "dropdown": [
+      {
+        "label": "Tous les actualités",
+        "href": "#"
+      },
+      {
+        "label": "Appel d’offres",
+        "href": "#"
+      },
+      {
+        "label": "Evénements",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "label": "ESPACE STAGIAIRE",
+    "dropdown": [
+      {
+        "label": "Emploi du temps",
+        "href": "#"
+      },
+      {
+        "label": "Planning d’examen",
+        "href": "#"
+      },
+      {
+        "label": "E-Cours",
+        "href": "#"
+      },
+      {
+        "label": "Documents utiles",
+        "href": "#"
+      },
+      {
+        "label": "Internat et restauration",
+        "href": "#"
+      },
+      {
+        "label": "Vacances",
+        "href": "#"
+      },
+      {
+        "label": "Lauréats/Alumni",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "label": "ESPACE ENTREPRISE",
+    "dropdown": [
+      {
+        "label": "Déposer vos offres d’emploi",
+        "href": "#"
+      },
+      {
+        "label": "Déposer vos offres",
+        "href": "#"
+      },
+      {
+        "label": "Nos entreprises partenaires",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "label": "ACTIVITÉS PARASCOLAIRES",
+    "dropdown": [
+      {
+        "label": "Présentation des clubs ",
+        "href": "#"
+      },
+      {
+        "label": "Activités des clubs",
+        "href": "#"
+      },
+      {
+        "label": "Gestion des activités des clubs",
+        "href": "#"
+      }
+    ]
+  }
+]
